@@ -7,7 +7,9 @@ To implement the Go function for user registration, create a server-side code th
 - inserts the user data into the SQLite database, and
 - returns appropriate responses to the client..
 
-A possible application file structure: 
+
+
+A possible application file structure:
 
 ```
 forum/
