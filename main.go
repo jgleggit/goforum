@@ -21,9 +21,9 @@ func main() {
 
 func ConnectDatabase() {
 
-	db, err := dataaccess.InitDatabase()
+	_, err := dataaccess.InitDatabase()
 	if err != nil {
-		log.Fatalf(`Failed to connect to "forum.db" database: %v\n`, db)
+		log.Fatalf(`Failed to connect to "forum.db" database: %v\n`, err)
 	}
 	fmt.Printf(`Successfully connected to "forum.db" database`)
 }
@@ -59,7 +59,7 @@ func StartRouter() {
 	// files directory. Contains images added to posts by user.
 	mux.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads"))))
 
-	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/", handlers/indexHandler)
 }
 
 func StartWebServer() {
