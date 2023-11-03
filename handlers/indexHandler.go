@@ -7,7 +7,9 @@ import (
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
+	
 	log.Println(` "/" endpoint handled by indexHandler`)
+	
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return

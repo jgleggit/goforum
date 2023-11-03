@@ -9,6 +9,7 @@ import (
 
 	"forum/dataaccess"
 	"forum/router"
+	"forum/handlers"
 )
 
 func main() {
@@ -57,9 +58,10 @@ func StartRouter() {
 
 	// Strips the "/uploads/" prefix from any request to the uploads
 	// files directory. Contains images added to posts by user.
+	/*
 	mux.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir("./uploads"))))
-
-	mux.HandleFunc("/", handlers/indexHandler)
+	*/
+	mux.HandleFunc("/", handlers.IndexHandler)
 }
 
 func StartWebServer() {
