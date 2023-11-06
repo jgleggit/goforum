@@ -14,6 +14,7 @@ import (
 
 func main() {
 
+	Greet()
 	ConnectDatabase()
 	StartRouter()
 	StartWebServer()

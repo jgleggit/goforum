@@ -3,12 +3,11 @@ package router
 import (
 	"net/http"
 
-	"forum/dataaccess"
 	"forum/handlers"
 )
 
 
-func SetupRoutes(mux *http.ServerMux) {
+func SetupRoutes(mux *http.ServeMux) {
 	
 	
 	
